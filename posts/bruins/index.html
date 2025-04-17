@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Harlow Malloc">
-<meta name="dcterms.date" content="2025-01-13">
+<meta name="author" content="Megan Tieu">
+<meta name="dcterms.date" content="2024-01-16">
 
-<title>Post With Code – Megan’s Blog</title>
+<title>HW 0 - Creating a post – Megan’s Blog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,10 +22,44 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -68,6 +102,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -115,11 +152,10 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Post With Code</h1>
+      <h1 class="title">HW 0 - Creating a post</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">news</div>
-                <div class="quarto-category">code</div>
-                <div class="quarto-category">analysis</div>
+                <div class="quarto-category">week 0</div>
+                <div class="quarto-category">hw</div>
               </div>
                   </div>
   </div>
@@ -130,14 +166,14 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Harlow Malloc </p>
+               <p>Megan Tieu </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">January 13, 2025</p>
+        <p class="date">January 16, 2024</p>
       </div>
     </div>
     
@@ -156,9 +192,232 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>This is a post with executable code.</p>
+<section id="visualization-tutorial-using-python" class="level1">
+<h1>Visualization tutorial using python</h1>
+<p>This is a tutorial on constructing an interesting data visualization of the Palmer Penguins data set</p>
+<p><img src="https://tkoomar.github.io/post/tt-palmer-penguins/featured_huc6cf4a21090aa2ea134ebf239881872e_167000_720x0_resize_lanczos_2.png" alt="Palmer Penguins Image. Design by Tanner Koomar. Artwork by @allison_horst" height="500"></p>
+<section id="imports" class="level2">
+<h2 class="anchored" data-anchor-id="imports">Imports</h2>
+<p>The first thing we need to do is import the necessary libraries. The pandas library is used for data manipulation and analysis for large datasets. The seaborn library is used to create graphics. The numpy library is used when working with arrays and performing mathematical operations on them.</p>
+<div id="cell-2" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd <span class="co">#pandas library is used for data manipulation and analysis for large datasets</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns  <span class="co">#seaborn library is used to create graphics</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np <span class="co">#numpy library is used when working with arrays and performing mathematical operations on them</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <span class="co">#matplotlib is used to make visualizations and plots</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="data-source" class="level2">
+<h2 class="anchored" data-anchor-id="data-source">Data Source</h2>
+<p>The next thing we need to do is read in the data set from the <a href="&quot;https://raw.githubusercontent.com/pic16b-ucla/24W/main/datasets/palmer_penguins.csv&quot;">link</a> it is hosted on.</p>
+<p>We read it as a csv file and store it in a pandas data frame variable called df, which is a 2-dimensional data structure. We can preview the first 6 rows and its values of df using a function called head().</p>
+<div id="cell-4" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/pic16b-ucla/24W/main/datasets/palmer_penguins.csv"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(url) <span class="co">#read it as a csv file and store it in a pandas data frame variable called df, which is a 2-dimensional data structure</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>df.head() <span class="co">#preview the first 6 rows and its values of df using a function called head().</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<div>
 
 
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">studyName</th>
+<th data-quarto-table-cell-role="th">Sample Number</th>
+<th data-quarto-table-cell-role="th">Species</th>
+<th data-quarto-table-cell-role="th">Region</th>
+<th data-quarto-table-cell-role="th">Island</th>
+<th data-quarto-table-cell-role="th">Stage</th>
+<th data-quarto-table-cell-role="th">Individual ID</th>
+<th data-quarto-table-cell-role="th">Clutch Completion</th>
+<th data-quarto-table-cell-role="th">Date Egg</th>
+<th data-quarto-table-cell-role="th">Culmen Length (mm)</th>
+<th data-quarto-table-cell-role="th">Culmen Depth (mm)</th>
+<th data-quarto-table-cell-role="th">Flipper Length (mm)</th>
+<th data-quarto-table-cell-role="th">Body Mass (g)</th>
+<th data-quarto-table-cell-role="th">Sex</th>
+<th data-quarto-table-cell-role="th">Delta 15 N (o/oo)</th>
+<th data-quarto-table-cell-role="th">Delta 13 C (o/oo)</th>
+<th data-quarto-table-cell-role="th">Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>PAL0708</td>
+<td>1</td>
+<td>Adelie Penguin (Pygoscelis adeliae)</td>
+<td>Anvers</td>
+<td>Torgersen</td>
+<td>Adult, 1 Egg Stage</td>
+<td>N1A1</td>
+<td>Yes</td>
+<td>11/11/07</td>
+<td>39.1</td>
+<td>18.7</td>
+<td>181.0</td>
+<td>3750.0</td>
+<td>MALE</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Not enough blood for isotopes.</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>PAL0708</td>
+<td>2</td>
+<td>Adelie Penguin (Pygoscelis adeliae)</td>
+<td>Anvers</td>
+<td>Torgersen</td>
+<td>Adult, 1 Egg Stage</td>
+<td>N1A2</td>
+<td>Yes</td>
+<td>11/11/07</td>
+<td>39.5</td>
+<td>17.4</td>
+<td>186.0</td>
+<td>3800.0</td>
+<td>FEMALE</td>
+<td>8.94956</td>
+<td>-24.69454</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>PAL0708</td>
+<td>3</td>
+<td>Adelie Penguin (Pygoscelis adeliae)</td>
+<td>Anvers</td>
+<td>Torgersen</td>
+<td>Adult, 1 Egg Stage</td>
+<td>N2A1</td>
+<td>Yes</td>
+<td>11/16/07</td>
+<td>40.3</td>
+<td>18.0</td>
+<td>195.0</td>
+<td>3250.0</td>
+<td>FEMALE</td>
+<td>8.36821</td>
+<td>-25.33302</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>PAL0708</td>
+<td>4</td>
+<td>Adelie Penguin (Pygoscelis adeliae)</td>
+<td>Anvers</td>
+<td>Torgersen</td>
+<td>Adult, 1 Egg Stage</td>
+<td>N2A2</td>
+<td>Yes</td>
+<td>11/16/07</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Adult not sampled.</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>PAL0708</td>
+<td>5</td>
+<td>Adelie Penguin (Pygoscelis adeliae)</td>
+<td>Anvers</td>
+<td>Torgersen</td>
+<td>Adult, 1 Egg Stage</td>
+<td>N3A1</td>
+<td>Yes</td>
+<td>11/16/07</td>
+<td>36.7</td>
+<td>19.3</td>
+<td>193.0</td>
+<td>3450.0</td>
+<td>FEMALE</td>
+<td>8.76651</td>
+<td>-25.32426</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="cleaning-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="cleaning-the-data">Cleaning the data</h2>
+<p>As we can see on row 3, there is a data entry with the studyName of PAL0708 where the values for the column describing the culmen length and depth, flipper length, body mass, and more are NaN. To take care of this, we should clean the data by getting rid of the rows where the values of the variables we want to investigate are NaN. Because we want to study the relationship between culmen depth and the length, we should only apply this function <code>~np.isnan()</code> to those variable names, but if we wanted to thoroughly clean it, we could apply it to all the values. To check if we are removing the variables properly, we can check the shape of the data frame using <code>print(df.shape)</code> before and apply we remove the NaN values. As we can see, the shape went from (344, 17) to (342, 17), which means we were successfully able to remove 2 rows.</p>
+<div id="cell-6" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.shape) <span class="co"># we can check the shape of the data frame using `print(df.shape)` before and apply we remove the NaN values</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df[<span class="op">~</span>np.isnan(df[<span class="st">"Culmen Depth (mm)"</span>])] <span class="co">#we should clean the data by getting rid of the rows where the values of the variables we want to investigate are NaN</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df[<span class="op">~</span>np.isnan(df[<span class="st">"Culmen Length (mm)"</span>])] <span class="co">#we should clean the data by getting rid of the rows where the values of the variables we want to investigate are NaN</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.shape) <span class="co"># we can check the shape of the data frame using `print(df.shape)` before and apply we remove the NaN values</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(344, 17)
+(342, 17)</code></pre>
+</div>
+</div>
+</section>
+<section id="making-the-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="making-the-visualization">Making the visualization</h2>
+<p>We are using the seaborns library to create a graphic. For the data, we are using “df,” which is our data set variable. We want to make a visualization of a line plot that shows the relationship between the Culmen Depth and the Culmen Length. To do this, we can make the x-axis, or the independent variable be the “Culmen Depth (mm)”. On the y-axis, the dependent variable is the “Culmen Length (mm)”. To create different lines for the different species of penguins, we can use the hue and set it to “Species”, which sets these lines as different colors.</p>
+</section>
+<section id="visualization-details" class="level2">
+<h2 class="anchored" data-anchor-id="visualization-details">Visualization details</h2>
+<p>The axis labels and the legend are automatically set based on the variables we defined. For the title, we can add it by using the .set_title function. It’s important to provide a title to provide context on the visualization.</p>
+<p>The different colors of the lines help distinguish the type of penguin.</p>
+<div id="cell-8" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>sns.lineplot(data <span class="op">=</span> df,</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>             x <span class="op">=</span> <span class="st">"Culmen Depth (mm)"</span>, <span class="co">#set x axis to be culmen depth</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>             y <span class="op">=</span> <span class="st">"Culmen Length (mm)"</span>, <span class="co">#set y axis to be culmen length</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>             hue<span class="op">=</span><span class="st">"Species"</span> <span class="co">#create three different lines with different colors for the different species</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>             ).set_title(<span class="st">"Culmen Depth and Culmen Length for Penguins at the Palmer Station"</span>) <span class="co">#descriptive title</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>             </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>Text(0.5, 1.0, 'Culmen Depth and Culmen Length for Penguins at the Palmer Station')</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-5-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="interpreting-the-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="interpreting-the-visualization">Interpreting the Visualization</h2>
+<p>As we can see, there are three different penguin species we are investigating. For all three species, there is a positive correlation between Culmen Length and Culmen Depth, which means that as the Culmen Length increases for a penguin, the Culmen Depth will also increase. We can see that the penguin species with generally the highest Culmen Depth is the Adelie Penguin, despite them having the lowest Culmen Length.</p>
+</section>
+<section id="adjusting-the-axes" class="level2">
+<h2 class="anchored" data-anchor-id="adjusting-the-axes">Adjusting the axes</h2>
+<p>If we want to make the axes start from 0 to avoid misinterpretations, we can adjust the axis range like so <code>plt.ylim(0, 60)</code>. This ensures accurate visual comparisons. The previous visualization had a preset axis range. Although it makes comparing the differences between the lines easier, it has the effect of accidentally misleading the viewers by making the differences seem bigger than reality. Although this new visualization with axes that start from 0 helps reduce bias, it is harder to read and also an eye-sore.</p>
+<div id="cell-11" class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>sns.lineplot(data <span class="op">=</span> df,</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>             x <span class="op">=</span> <span class="st">"Culmen Depth (mm)"</span>,<span class="co">#set x axis to be culmen depth</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>             y <span class="op">=</span> <span class="st">"Culmen Length (mm)"</span>,<span class="co">#set t axis to be culmen length</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>             hue<span class="op">=</span><span class="st">"Species"</span> <span class="co">#create three different lines with different colors for the different species </span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>             ).set_title(<span class="st">"Culmen Depth and Culmen Length for Penguins at the Palmer Station"</span>)<span class="co">#descriptive title</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">0</span>, <span class="dv">60</span>) <span class="co">#make the axes start from 0 to avoid misinterpretations</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="dv">0</span>, <span class="dv">60</span>) <span class="co">#make the axes start from 0 to avoid misinterpretations</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

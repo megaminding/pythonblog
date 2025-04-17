@@ -2,15 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://megaminding.github.io/pythonblog/about.html</loc>
-    <lastmod>2025-01-14T02:58:47.248Z</lastmod>
+    <lastmod>2025-01-14T09:20:20.446Z</lastmod>
   </url>
   <url>
-    <loc>https://megaminding.github.io/pythonblog/posts/welcome/index.html</loc>
-    <lastmod>2025-01-14T09:15:26.609Z</lastmod>
+    <loc>https://megaminding.github.io/pythonblog/posts/final/index.html</loc>
+    <lastmod>2025-03-27T22:31:00.789Z</lastmod>
+  </url>
+  <url>
+    <loc>https://megaminding.github.io/pythonblog/posts/bruins/index.html</loc>
+    <lastmod>2025-02-01T22:55:57.942Z</lastmod>
+  </url>
+  <url>
+    <loc>https://megaminding.github.io/pythonblog/posts/hw6/index.html</loc>
+    <lastmod>2025-03-12T02:19:26.767Z</lastmod>
+  </url>
+  <url>
+    <loc>https://megaminding.github.io/pythonblog/posts/hw3/index.html</loc>
+    <lastmod>2025-03-01T07:32:27.304Z</lastmod>
   </url>
   <url>
     <loc>https://megaminding.github.io/pythonblog/posts/post-with-code/index.html</loc>
     <lastmod>2025-01-14T02:58:47.248Z</lastmod>
+  </url>
+  <url>
+    <loc>https://megaminding.github.io/pythonblog/posts/hw2/index.html</loc>
+    <lastmod>2025-02-08T20:51:14.757Z</lastmod>
+  </url>
+  <url>
+    <loc>https://megaminding.github.io/pythonblog/posts/hw5/index.html</loc>
+    <lastmod>2025-03-06T21:06:59.486Z</lastmod>
+  </url>
+  <url>
+    <loc>https://megaminding.github.io/pythonblog/posts/hw4/index.html</loc>
+    <lastmod>2025-03-06T20:16:21.733Z</lastmod>
+  </url>
+  <url>
+    <loc>https://megaminding.github.io/pythonblog/posts/welcome/index.html</loc>
+    <lastmod>2025-01-17T03:20:24.810Z</lastmod>
+  </url>
+  <url>
+    <loc>https://megaminding.github.io/pythonblog/posts/hw1/index.html</loc>
+    <lastmod>2025-02-10T23:36:41.735Z</lastmod>
+  </url>
+  <url>
+    <loc>https://megaminding.github.io/pythonblog/posts/final/myProject/Interactive-1.interactive.html</loc>
+    <lastmod>2025-03-21T22:48:21.591Z</lastmod>
   </url>
   <url>
     <loc>https://megaminding.github.io/pythonblog/index.html</loc>

@@ -2,8 +2,17 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/final/myProject/Interactive-1.interactive.html",
       "/posts/post-with-code/index.html",
-      "/posts/welcome/index.html"
+      "/posts/welcome/index.html",
+      "/posts/final/index.html",
+      "/posts/hw6/index.html",
+      "/posts/hw5/index.html",
+      "/posts/hw4/index.html",
+      "/posts/hw3/index.html",
+      "/posts/hw2/index.html",
+      "/posts/hw1/index.html",
+      "/posts/bruins/index.html"
     ]
   }
 ]
